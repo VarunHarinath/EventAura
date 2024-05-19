@@ -1,14 +1,18 @@
-import { useState } from "react";
 import Navbar from "./components/NavBar/Navbar";
 import HomePage from "./components/HomePage/HomePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./components/NavBar/Footer";
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="m-5">
-        <HomePage />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </>
   );
 }
