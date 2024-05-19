@@ -26,7 +26,7 @@ The Tesseract Event Management System is a comprehensive platform designed to fa
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/VarunHarinath/tesract.git
    ```
 
 2. Navigate to the project directory:
