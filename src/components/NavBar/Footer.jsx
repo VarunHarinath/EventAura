@@ -5,7 +5,7 @@ import Logo from "../../assets/tesract-main.png";
 const Footer = () => {
   return (
     <>
-      <footer className="text-gray-100  px-4 py-5 max-w-screen-xl mx-auto md:px-8 my-24">
+      <footer className="text-gray-100  px-4 py-5 max-w-screen-xl mx-auto md:px-8 mt-24">
         <div className="max-w-lg sm:mx-auto sm:text-center">
           <img src={Logo} className="w-32 sm:mx-auto" />
           <p className="leading-relaxed mt-2 text-[15px]">
