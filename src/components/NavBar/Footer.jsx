@@ -10,7 +10,9 @@ const Footer = () => {
     <>
       <footer className="text-gray-100 px-4 py-5 max-w-screen-xl mx-auto md:px-8 mt-24">
         <div className="max-w-3xl sm:mx-auto sm:text-center">
-          <img src={Logo} className="w-36 h-auto  " />
+          <div className="flex justify-center">
+            <img src={Logo} className="w-36 h-auto" />
+          </div>
           <p className="leading-relaxed  text-base font-light">
             Tesseract empowers student-driven communities and college clubs in
             tech, AI, ML, and development. Our platform offers seamless payment
