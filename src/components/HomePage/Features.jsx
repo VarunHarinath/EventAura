@@ -1,19 +1,22 @@
 import React from "react";
 import { features } from "../../constants";
 
-const Features = () => {
+const Features = ({ id }) => {
   return (
     <>
-      <section className="my-24">
+      <section id={id} className="my-20 pt-16">
         <div className="max-w-screen-xl mx-auto px-4 text-gray-200 md:px-8">
           <div className="max-w-xl mx-auto space-y-3 sm:text-center">
-            <h3 className="text-indigo-600 font-semibold">Features</h3>
+            <h3 className="text-indigo-600 opacity-80 text-2xl font-semibold">
+              Features
+            </h3>
             <p className="text-gray-100 text-3xl font-semibold sm:text-4xl">
               Do more with less complexity
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              congue, nisl eget molestie varius, enim ex faucibus purus
+              Empower your student community with our all-in-one event
+              management solution, featuring secure payments, automated mailing,
+              dynamic QR ticketing, and advanced analytics.
             </p>
           </div>
           <div className="mt-12">

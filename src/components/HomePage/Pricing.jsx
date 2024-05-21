@@ -1,9 +1,9 @@
 import React from "react";
 import { pricingOptions } from "../../constants";
 
-const Pricing = () => {
+const Pricing = ({ id }) => {
   return (
-    <section className="relative py-14 ">
+    <section id={id} className="relative py-14 pt-20 ">
       <div className="relative max-w-screen-xl mx-auto text-gray-300 sm:px-4 md:px-8">
         <div className="max-w-xl mx-auto space-y-3 px-4 sm:text-center sm:px-0">
           <h3 className="text-indigo-600 font-semibold">Pricing</h3>
@@ -24,8 +24,8 @@ const Pricing = () => {
               className={`relative flex-1 flex items-stretch flex-col mt-6 border-2 border-indigo-600 sm:mt-0 sm:rounded-xl   sm:max-w-md`}
             >
               <div className="p-4 py-8 space-y-4 border-b border-gray-700 md:p-8">
-                <span className="text-gray-300 font-medium">{item.title}</span>
-                <div className="text-gray-300 text-3xl font-semibold">
+                <span className="text-gray-100 font-medium">{item.title}</span>
+                <div className="text-gray-50 text-3xl font-semibold">
                   {item.price}{" "}
                   <span className="text-xl font-normal ">/tickect</span>
                 </div>

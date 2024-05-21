@@ -2,6 +2,8 @@ import { useState } from "react";
 import logo from "../../assets/navLogo.png";
 import { navItems } from "../../constants";
 import { Menu, X } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -17,16 +19,26 @@ const Navbar = () => {
           {/* Logo and Brand Name */}
           <div className="flex items-center flex-shrink-0">
             <img className="h-8 w-8" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight ml-2 text-white font-semibold">
+            <RouterLink
+              to="/"
+              className="text-xl tracking-tight ml-2 text-white font-semibold"
+            >
               Tesract
-            </span>
+            </RouterLink>
           </div>
 
           {/* Navigation Items */}
           <div className="hidden lg:flex space-x-12">
             {navItems.map((item, index) => (
               <li key={index} className="list-none">
-                <a href={item.href}>{item.label}</a>
+                <Link
+                  to={item.href}
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </div>
@@ -56,18 +68,26 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {mobileDrawerOpen && (
-        <div className="absolute top-14 inset-x-0 z-40 bg-black bg-opacity-75 flex justify-center lg:hidden">
-          <div className="bg-neutral-900 w-full max-w-sm p-8 rounded-lg">
+        <div className="absolute top-14 inset-x-0 z-40  flex justify-center lg:hidden">
+          <div className="bg-neutral-900 w-full  p-8 rounded-lg">
             <ul className="space-y-6 text-center text-white">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <a href={item.href}>{item.label}</a>
+                  <Link
+                    to={item.href}
+                    smooth={true}
+                    duration={500}
+                    onClick={toggleNavbar}
+                    className="cursor-pointer"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
               <li>
                 <a
-                  href=""
-                  className="py-2 px-3 rounded-md bg-indigo-600 text-white   hover:scale-105"
+                  href="#host-your-event"
+                  className="py-2 px-3 rounded-md bg-indigo-600 text-white hover:scale-105"
                 >
                   Host Your event
                 </a>

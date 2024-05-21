@@ -1,11 +1,14 @@
 import React from "react";
 import robotPhoto from "../../assets/robot.png";
 
-const HeroSection = () => {
+const HeroSection = ({ id }) => {
   return (
     <>
       <div>
-        <section className="mt-24 mx-auto max-w-screen-xl pb-12 px-4 items-center lg:flex md:px-8 my-24">
+        <section
+          id={id}
+          className="mt-24 mx-auto max-w-screen-xl pb-12 px-4 items-center lg:flex md:px-8 my-24 pt-20"
+        >
           <div className="space-y-4 flex-1 sm:text-center lg:text-left">
             <h1 className="text-white font-bold text-4xl xl:text-5xl">
               Elevate events with our platform
@@ -15,8 +18,9 @@ const HeroSection = () => {
               </span>
             </h1>
             <p className="text-gray-300 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
-              Empower your events effortlessly with streamlined payments,
-              ensuring seamless success at every turn.
+              Empowering student-driven communities and college clubs to
+              innovate, collaborate, and succeed, making their events successful
+              with our event ticketing manager and payment gateway.
             </p>
             <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
               <a
