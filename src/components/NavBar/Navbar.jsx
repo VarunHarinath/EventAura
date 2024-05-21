@@ -31,26 +31,26 @@ const Navbar = () => {
           <div className="hidden lg:flex space-x-12">
             {navItems.map((item, index) => (
               <li key={index} className="list-none">
-                <Link
+                <RouterLink
                   to={item.href}
                   smooth={true}
                   duration={500}
                   className="cursor-pointer"
                 >
                   {item.label}
-                </Link>
+                </RouterLink>
               </li>
             ))}
           </div>
 
           {/* Host Your Event Button */}
           <div className="hidden lg:flex">
-            <a
-              href=""
+            <RouterLink
+              to="/secure/v3/Event-On-Boadring"
               className="py-2 px-3 rounded-md bg-indigo-600 text-white hover:scale-105"
             >
               Host Your event
-            </a>
+            </RouterLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,12 +85,12 @@ const Navbar = () => {
                 </li>
               ))}
               <li>
-                <a
-                  href="#host-your-event"
+                <RouterLink
+                  to="/secure/v3/Event-On-Boadring"
                   className="py-2 px-3 rounded-md bg-indigo-600 text-white hover:scale-105"
                 >
                   Host Your event
-                </a>
+                </RouterLink>
               </li>
             </ul>
           </div>

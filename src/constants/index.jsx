@@ -6,10 +6,10 @@ import { CalendarCheck } from "lucide-react";
 import { Lock } from "lucide-react";
 
 export const navItems = [
-  { label: "Home", href: "home" },
-  { label: "Features", href: "features" },
-  { label: "Workflow", href: "workflow" },
-  { label: "Pricing", href: "pricing" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact Us", href: "/Contact-Us" },
 ];
 
 export const workflow = [
