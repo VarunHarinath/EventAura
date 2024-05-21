@@ -11,7 +11,7 @@ const Footer = () => {
       <footer className="text-gray-100 px-4 py-5 max-w-screen-xl mx-auto md:px-8 mt-24">
         <div className="max-w-3xl sm:mx-auto sm:text-center">
           <img src={Logo} className="w-32 sm:mx-auto" />
-          <p className="leading-relaxed mt-4 text-base">
+          <p className="leading-relaxed mt-4 text-base font-light">
             Tesseract is dedicated to empowering student-driven communities and
             college-based clubs, particularly in the fields of technology, AI,
             ML, and development. We strive to provide resources, support, and a

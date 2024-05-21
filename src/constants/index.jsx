@@ -126,11 +126,11 @@ export const resourcesLinks = [
 ];
 
 export const footerNavs = [
-  { href: "#", text: "Home" },
-  { href: "#", text: "Features" },
+  { href: "#", text: "About Us" },
   { href: "#", text: "Events" },
   { href: "#", text: "Event Onboarding" },
   { href: "/company-eula", text: "Terms and conditions" },
+  { href: "#", text: "Contact Us" },
 ];
 
 export const communityLinks = [
