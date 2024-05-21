@@ -10,15 +10,17 @@ const EventOnboardingForm = () => {
   const [eventVenueUrl, setEventVenueUrl] = useState("");
   const [eventManagerMail, setEventManagerMail] = useState("");
   const [eventManagerPhone, setEventManagerPhone] = useState("");
+  const [eventManagerUPI, setEventManagerUPI] = useState("");
   const [eventAdminPassword, setEventAdminPassword] = useState("");
   const [eventDate, seteventDate] = useState(null);
   const [eventLastDate, seteventLastDate] = useState(null);
   const [messageDate, setMessageDate] = useState("");
   const [messageLastDate, setMessageLastDate] = useState("");
+  const [spinner, setSpinner] = useState(false);
 
   const handleEventLastDate = (date) => {
-    if (eventLastDate && date < eventLastDate) {
-      setMessageLastDate("Please select a date after the event date");
+    if (eventLastDate && date >= eventLastDate) {
+      setMessageLastDate("Please select a date before the event date");
       seteventLastDate(null);
       return;
     }
@@ -38,8 +40,11 @@ const EventOnboardingForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSpinner(true);
     const salt = bycrpt.genSaltSync(10);
     const adminHashedPassword = bycrpt.hashSync(eventAdminPassword, salt);
+    const eventPayment = bycrpt.hashSync(eventManagerUPI, salt);
+    const eventDateModified = eventDate.toISOString().split("T")[0];
     const data = {
       eventName: eventName,
       eventDescription: eventDescription,
@@ -48,14 +53,15 @@ const EventOnboardingForm = () => {
       eventManagerMail: eventManagerMail,
       eventManagerPhone: eventManagerPhone,
       eventAdminPassword: adminHashedPassword,
-      eventDate: eventDate,
+      eventDate: eventDateModified,
       eventLastDate: eventLastDate,
+      eventManagerUPI: eventPayment,
     };
     console.log("Submitted:", data);
   };
 
   return (
-    <main className="w-full h-screen flex flex-col items-center justify-center pb-48 mt-56">
+    <main className="w-full h-screen flex flex-col items-center justify-center  my-64">
       <div className="max-w-sm w-full flex-grow text-white">
         {" "}
         <div className="text-center pb-8">
@@ -171,6 +177,26 @@ const EventOnboardingForm = () => {
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">
+              UPI Id (
+              <span className="font-light">
+                To receive the payments for the event
+              </span>
+              )
+            </label>
+            <input
+              type="text"
+              id="eventUPI"
+              value={eventManagerUPI}
+              onChange={(e) => setEventManagerUPI(e.target.value)}
+              pattern="^([a-zA-Z0-9._]+)@([a-zA-Z]{2,64})$"
+              title="Please enter a valid UPI ID (e.g., username@bankname)"
+              required
+              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-2">
               Admin Pannel Password{" "}
             </label>
             <input
@@ -195,12 +221,44 @@ const EventOnboardingForm = () => {
             </ol>
           </div>
 
-          <button
-            type="submit"
-            className="w-full px-4 py-2 text-center text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg duration-150"
-          >
-            Create Event
-          </button>
+          {spinner ? (
+            <>
+              <button
+                type="submit"
+                className="w-full px-4 py-2 text-center font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg flex items-center justify-center duration-150"
+              >
+                <svg
+                  className="animate-spin h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                type="submit"
+                className="w-full px-4 py-2 text-center text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg duration-150"
+              >
+                Create Event
+              </button>
+            </>
+          )}
         </form>
       </div>
     </main>
