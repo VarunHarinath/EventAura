@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import bycrpt from "bcryptjs";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const EventOnboardingForm = () => {
+  const navigate = useNavigate();
   const [eventName, setEventName] = useState("");
+  const [eventHostedBy, setEventHostedBy] = useState("");
+  const [eventSpeaker, setEventSpeaker] = useState("");
   const [eventDescription, setEventDescription] = useState("");
   const [eventVenue, setEventVenue] = useState("");
   const [eventVenueUrl, setEventVenueUrl] = useState("");
@@ -56,12 +61,25 @@ const EventOnboardingForm = () => {
       eventDate: eventDateModified,
       eventLastDate: eventLastDate,
       eventManagerUPI: eventPayment,
+      eventHostedBy: eventHostedBy,
+      eventSpeaker: eventSpeaker,
     };
-    console.log("Submitted:", data);
+    try {
+      const response = await axios.post("http://localhost:8080/event", data);
+      if (response.data.message) {
+        setSpinner(false);
+        navigate(
+          `/secure/v3/Event-On-Boadring/success/${response.data.data._id}`
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      setSpinner(false);
+    }
   };
 
   return (
-    <main className="w-full h-screen flex flex-col items-center justify-center  my-64">
+    <main className=" w-auto h-auto flex flex-col items-center justify-center pt-5">
       <div className="max-w-sm w-full flex-grow text-white">
         {" "}
         <div className="text-center pb-8">
@@ -91,6 +109,32 @@ const EventOnboardingForm = () => {
               value={eventDescription}
               onChange={(e) => setEventDescription(e.target.value)}
               required
+              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              Event Hosted By
+            </label>
+            <input
+              type="text"
+              id="eventHostedBy"
+              value={eventHostedBy}
+              onChange={(e) => setEventHostedBy(e.target.value)}
+              required
+              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              Event Speaker
+            </label>
+            <input
+              type="text"
+              id="eventName"
+              placeholder="Name of the speaker (ff any)"
+              value={eventSpeaker}
+              onChange={(e) => setEventSpeaker(e.target.value)}
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>

@@ -6,6 +6,7 @@ import TermsOfService from "./components/EULA/TermsOfService ";
 import ScrollToTop from "./components/NavBar/utils/ScrollToTop ";
 import EventBoarding from "./components/EventOnboarding/EventBoarding";
 import Error from "./components/utils/Error";
+import EventSucess from "./components/EventOnboarding/EventSucess";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
           <Route
             path="/secure/v3/Event-On-Boadring"
             element={<EventBoarding />}
+          />
+          <Route
+            path="/secure/v3/Event-On-Boadring/success/:id"
+            element={<EventSucess />}
           />
           <Route path="*" element={<Error />} />
         </Routes>
