@@ -12,6 +12,7 @@ const EventOnboardingForm = () => {
   const [eventSpeaker, setEventSpeaker] = useState("");
   const [eventDescription, setEventDescription] = useState("");
   const [eventVenue, setEventVenue] = useState("");
+  const [price, setPrice] = useState("");
   const [eventVenueUrl, setEventVenueUrl] = useState("");
   const [eventManagerMail, setEventManagerMail] = useState("");
   const [eventManagerPhone, setEventManagerPhone] = useState("");
@@ -62,13 +63,14 @@ const EventOnboardingForm = () => {
       eventManagerUPI: eventManagerUPI,
       eventHostedBy: eventHostedBy,
       eventSpeaker: eventSpeaker,
+      eventPrice: price,
     };
     try {
       const response = await axios.post("http://localhost:8080/event", data);
       if (response.data.message) {
         setSpinner(false);
         navigate(
-          `/secure/v3/Event-On-Boadring/success/${response.data.data._id}`
+          `/secure/v3/Event-On-Boarding/success/${response.data.data._id}`
         );
       }
     } catch (error) {
@@ -163,6 +165,16 @@ const EventOnboardingForm = () => {
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
+          <div className="mt-4">
+            <label className="block text-sm font-medium mb-2">Price</label>
+            <input
+              type="text"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder=" "
+              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+            />
+          </div>
           <div>
             <label className="block text-sm font-medium mb-2">Event Date</label>
             <DatePicker
@@ -173,6 +185,7 @@ const EventOnboardingForm = () => {
             />
           </div>
           <span className="py-2 text-red-600">{messageDate}</span>
+
           <div>
             <label className="block text-sm font-medium mb-2">
               Event Last Date for Registrations
@@ -260,6 +273,11 @@ const EventOnboardingForm = () => {
               </li>
               <li>
                 The credinals will be sent to your email id for the admin pannel
+              </li>
+              <li>For Other payament options contact us</li>
+              <li>
+                The event will be live on the date you have selected and will be
+                open for registration till the last date
               </li>
             </ol>
           </div>
