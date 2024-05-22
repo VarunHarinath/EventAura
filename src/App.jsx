@@ -22,7 +22,7 @@ function App() {
             element={<EventBoarding />}
           />
           <Route
-            path="/secure/v3/Event-On-Boadring/success/:id"
+            path="/secure/v3/Event-On-Boarding/success/:id"
             element={<EventSucess />}
           />
           <Route path="*" element={<Error />} />

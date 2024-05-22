@@ -19,7 +19,7 @@ const CopyButton = ({ text }) => {
   };
 
   return (
-    <div className="relative w-full max-w-[16rem]">
+    <div className="relative w-auto">
       <label htmlFor="npm-install-copy-button" className="sr-only">
         Label
       </label>
