@@ -60,7 +60,7 @@ const EventOnboardingForm = () => {
       eventAdminPassword: adminHashedPassword,
       eventDate: eventDate,
       eventLastDate: eventLastDate,
-      eventManagerUPI: eventManagerUPI,
+      eventPaymentUpi: eventManagerUPI,
       eventHostedBy: eventHostedBy,
       eventSpeaker: eventSpeaker,
       eventPrice: price,
@@ -244,6 +244,7 @@ const EventOnboardingForm = () => {
               id="eventUPI"
               value={eventManagerUPI}
               onChange={(e) => setEventManagerUPI(e.target.value)}
+              placeholder="Leave empty if not using UPI for payments"
               pattern="^([a-zA-Z0-9._]+)@([a-zA-Z]{2,64})$"
               title="Please enter a valid UPI ID (e.g., username@bankname)"
               required
