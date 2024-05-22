@@ -66,7 +66,10 @@ const EventOnboardingForm = () => {
       eventPrice: price,
     };
     try {
-      const response = await axios.post("http://localhost:8080/event", data);
+      const response = await axios.post(
+        "https://tesract-server.onrender.com/event",
+        data
+      );
       if (response.data.message) {
         setSpinner(false);
         navigate(

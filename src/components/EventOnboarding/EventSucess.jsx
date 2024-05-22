@@ -11,7 +11,9 @@ const Sucess = () => {
   useEffect(() => {
     const fetctApi = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/event/${id}`);
+        const response = await axios.get(
+          `https://tesract-server.onrender.com/event/${id}`
+        );
         console.log(response);
         setdata(response.data.data);
       } catch (error) {
@@ -31,7 +33,8 @@ const Sucess = () => {
                 <div className="sm:flex sm:items-center  sm:justify-between">
                   <div className="text-center sm:text-left">
                     <h1 className="text-2xl font-bold text-gray-100 sm:text-3xl">
-                      The {data?.Name} has been created successfully! 🎉
+                      The {data?.eventName} event has been created successfully!
+                      🎉
                     </h1>
 
                     <p className="mt-1.5 text-sm text-gray-200">

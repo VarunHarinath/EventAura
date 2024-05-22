@@ -54,7 +54,7 @@ The Tesseract Event Management System is a comprehensive platform designed to fa
    npm run dev
    ```
 
-2. Access the application through the provided URL, typically [http://localhost:5173](http://localhost:5173).
+2. Access the application through the provided URL, typically [https://tesract.vercel.app/](https://tesract.vercel.app/).
 
 ### Deployment
 
