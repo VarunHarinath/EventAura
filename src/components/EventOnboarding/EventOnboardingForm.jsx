@@ -48,8 +48,7 @@ const EventOnboardingForm = () => {
     setSpinner(true);
     const salt = bycrpt.genSaltSync(10);
     const adminHashedPassword = bycrpt.hashSync(eventAdminPassword, salt);
-    const eventPayment = bycrpt.hashSync(eventManagerUPI, salt);
-    const eventDateModified = eventDate.toISOString().split("T")[0];
+
     const data = {
       eventName: eventName,
       eventDescription: eventDescription,
@@ -58,9 +57,9 @@ const EventOnboardingForm = () => {
       eventManagerMail: eventManagerMail,
       eventManagerPhone: eventManagerPhone,
       eventAdminPassword: adminHashedPassword,
-      eventDate: eventDateModified,
+      eventDate: eventDate,
       eventLastDate: eventLastDate,
-      eventManagerUPI: eventPayment,
+      eventManagerUPI: eventManagerUPI,
       eventHostedBy: eventHostedBy,
       eventSpeaker: eventSpeaker,
     };
