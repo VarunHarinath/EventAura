@@ -1,30 +1,46 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const EventSucess = () => {
   const [data, setdata] = useState(null);
   const { id } = useParams();
+
+  useEffect(() => {
+    const fetctApi = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/event/${id}`);
+        console.log(response);
+        setdata(response.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetctApi();
+  }, []);
+
   return (
     <>
       <header>
-        <div className="mx-auto max-w-screen-xl max-h-screen px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="mx-auto max-w-screen-xl h-screen px-4 mt-10 py-8 sm:px-6 sm:py-12 lg:px-8 ">
+          <div className="sm:flex sm:items-center  sm:justify-between">
             <div className="text-center sm:text-left">
               <h1 className="text-2xl font-bold text-gray-100 sm:text-3xl">
-                Welcome Back, Barry!
+                The event {data?.eventName} has been created successfully! 🎉
               </h1>
 
-              <p className="mt-1.5 text-sm text-gray-500">
-                Let's write a new blog post! 🎉
+              <p className="mt-1.5 text-sm text-gray-200">
+                Navigate to the event page or the admin pannel to manage the
+                event.
               </p>
             </div>
 
             <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
               <button
-                className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:ring"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover:text-gray-700 hover:border-gray-200 hover:border focus:outline-none focus:ring"
                 type="button"
               >
-                <span className="text-sm font-medium"> View Website </span>
+                <span className="text-sm font-medium"> View Event Page </span>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,10 +59,25 @@ const EventSucess = () => {
               </button>
 
               <button
-                className="block rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover:text-gray-700 hover:border-gray-200 hover:border focus:outline-none focus:ring"
                 type="button"
               >
-                Create Post
+                <span className="text-sm font-medium"> View Admin Pannel </span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
               </button>
             </div>
           </div>
