@@ -1,10 +1,10 @@
 import React from "react";
 import { features } from "../../constants";
 
-const Features = ({ id }) => {
+const Features = () => {
   return (
     <>
-      <section id={id} className="my-20 pt-16">
+      <section className="my-20 pt-16">
         <div className="max-w-screen-xl mx-auto px-4 text-gray-200 md:px-8">
           <div className="max-w-xl mx-auto space-y-3 sm:text-center">
             <h3 className="text-indigo-600 opacity-80 text-2xl font-semibold">

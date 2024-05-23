@@ -3,10 +3,10 @@ import { workflow } from "../../constants";
 import { CheckCircle2 } from "lucide-react";
 import PhonePayLogo from "../../assets/PhonePay.png";
 
-const WorkFlow = ({ id }) => {
+const WorkFlow = () => {
   return (
     <>
-      <section id={id} className=" my-24 pt-20">
+      <section className=" my-24 pt-20">
         <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8 lg:flex gap-16">
           <div className="lg:w-1/2 lg:flex lg:items-center">
             <img

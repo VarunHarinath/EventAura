@@ -12,7 +12,7 @@ const Events = () => {
         const response = await axios.get(
           "https://tesract-server.onrender.com/event"
         );
-        console.log(response.data.data);
+
         setEventData(response.data.data);
       } catch (error) {
         console.log(error);
@@ -104,7 +104,7 @@ const Events = () => {
             />
           </svg>
 
-          <p className="whitespace-nowrap text-sm">Refunded</p>
+          <p className="whitespace-nowrap text-sm">Completed</p>
         </span>
       </div>
       {eventData.map((event) => {

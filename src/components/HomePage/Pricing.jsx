@@ -1,9 +1,9 @@
 import React from "react";
 import { pricingOptions } from "../../constants";
 
-const Pricing = ({ id }) => {
+const Pricing = () => {
   return (
-    <section id={id} className="relative py-14 pt-20 ">
+    <section className="relative py-14 pt-20 ">
       <div className="relative max-w-screen-xl mx-auto text-gray-300 sm:px-4 md:px-8">
         <div className="max-w-xl mx-auto space-y-3 px-4 sm:text-center sm:px-0">
           <h3 className="text-indigo-600 font-semibold">Pricing</h3>

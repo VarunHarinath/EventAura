@@ -7,10 +7,10 @@ import Pricing from "./Pricing";
 const HomePage = () => {
   return (
     <>
-      <HeroSection id="home" />
-      <Features id="features" />
-      <WorkFlow id="workflow" />
-      <Pricing id="pricing" />
+      <HeroSection />
+      <Features />
+      <WorkFlow />
+      <Pricing />
     </>
   );
 };

@@ -31,12 +31,7 @@ const Navbar = () => {
           <div className="hidden lg:flex space-x-12">
             {navItems.map((item, index) => (
               <li key={index} className="list-none">
-                <RouterLink
-                  to={item.href}
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer"
-                >
+                <RouterLink to={item.href} className="cursor-pointer">
                   {item.label}
                 </RouterLink>
               </li>
@@ -68,20 +63,18 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {mobileDrawerOpen && (
-        <div className="absolute top-14 inset-x-0 z-40  flex justify-center lg:hidden">
+        <div className=" top-14 inset-x-0 z-40  flex justify-center lg:hidden sticky">
           <div className="bg-neutral-900 w-full  p-8 rounded-lg">
             <ul className="space-y-6 text-center text-white">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <Link
+                  <RouterLink
                     to={item.href}
-                    smooth={true}
-                    duration={500}
                     onClick={toggleNavbar}
                     className="cursor-pointer"
                   >
                     {item.label}
-                  </Link>
+                  </RouterLink>
                 </li>
               ))}
               <li>
