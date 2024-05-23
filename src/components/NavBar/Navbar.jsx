@@ -63,8 +63,8 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {mobileDrawerOpen && (
-        <div className=" top-14 inset-x-0 z-40  flex justify-center lg:hidden sticky">
-          <div className="bg-neutral-900 w-full  p-8 rounded-lg">
+        <div className="fixed inset-x-0 z-40 flex justify-center items-center  bg-opacity-50 lg:hidden">
+          <div className="bg-neutral-900 w-full max-w-md p-8 rounded-lg">
             <ul className="space-y-6 text-center text-white">
               {navItems.map((item, index) => (
                 <li key={index}>

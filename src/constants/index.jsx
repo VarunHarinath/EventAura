@@ -8,7 +8,7 @@ import { Lock } from "lucide-react";
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Events", href: "/events" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "About Us", href: "/about-us" },
   { label: "Contact Us", href: "/Contact-Us" },
 ];
 
