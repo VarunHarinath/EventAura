@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import bycrpt from "bcryptjs";
+import bcrypt from "bcryptjs";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -18,8 +18,8 @@ const EventOnboardingForm = () => {
   const [eventManagerPhone, setEventManagerPhone] = useState("");
   const [eventManagerUPI, setEventManagerUPI] = useState("");
   const [eventAdminPassword, setEventAdminPassword] = useState("");
-  const [eventDate, seteventDate] = useState(null);
-  const [eventLastDate, seteventLastDate] = useState(null);
+  const [eventDate, setEventDate] = useState(null);
+  const [eventLastDate, setEventLastDate] = useState(null);
   const [messageDate, setMessageDate] = useState("");
   const [messageLastDate, setMessageLastDate] = useState("");
   const [spinner, setSpinner] = useState(false);
@@ -27,28 +27,28 @@ const EventOnboardingForm = () => {
   const handleEventLastDate = (date) => {
     if (eventLastDate && date >= eventLastDate) {
       setMessageLastDate("Please select a date before the event date");
-      seteventLastDate(null);
+      setEventLastDate(null);
       return;
     }
-    seteventLastDate(date);
+    setEventLastDate(date);
     setMessageLastDate("");
   };
 
   const handleEventDate = (date) => {
     if (date < new Date()) {
       setMessageDate("Please select a future date");
-      seteventDate(null);
+      setEventDate(null);
       return;
     }
-    seteventDate(date);
+    setEventDate(date);
     setMessageDate("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSpinner(true);
-    const salt = bycrpt.genSaltSync(10);
-    const adminHashedPassword = bycrpt.hashSync(eventAdminPassword, salt);
+    const salt = bcrypt.genSaltSync(10);
+    const adminHashedPassword = bcrypt.hashSync(eventAdminPassword, salt);
 
     const data = {
       eventName: eventName,
@@ -83,17 +83,19 @@ const EventOnboardingForm = () => {
   };
 
   return (
-    <main className=" w-auto h-auto flex flex-col items-center justify-center pt-5">
-      <div className="max-w-sm w-full flex-grow text-white">
-        {" "}
+    <main className="w-auto h-auto flex flex-col items-center justify-center pt-5">
+      <div className="max-w-2xl w-full text-white">
         <div className="text-center pb-8">
           <h3 className="text-3xl font-bold sm:text-4xl">Sign Up</h3>
           <p className="mt-2 text-lg">
             Join our community and unlock awesome features.
           </p>
         </div>
-        <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-          <div>
+        <form
+          onSubmit={handleSubmit}
+          className="mt-8 space-y-5 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-4"
+        >
+          <div className="md:col-span-2">
             <label className="block text-sm font-medium mb-2">Event Name</label>
             <input
               type="text"
@@ -104,7 +106,7 @@ const EventOnboardingForm = () => {
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
-          <div>
+          <div className="md:col-span-2">
             <label className="block text-sm font-medium mb-2">
               Event Description
             </label>
@@ -135,8 +137,8 @@ const EventOnboardingForm = () => {
             </label>
             <input
               type="text"
-              id="eventName"
-              placeholder="Name of the speaker (ff any)"
+              id="eventSpeaker"
+              placeholder="Name of the speaker (if any)"
               value={eventSpeaker}
               onChange={(e) => setEventSpeaker(e.target.value)}
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
@@ -164,11 +166,11 @@ const EventOnboardingForm = () => {
               id="eventVenueUrl"
               value={eventVenueUrl}
               onChange={(e) => setEventVenueUrl(e.target.value)}
-              placeholder="https://example.com ( Google Maps URL )"
+              placeholder="https://example.com (Google Maps URL)"
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
-          <div className="mt-4">
+          <div>
             <label className="block text-sm font-medium mb-2">Price</label>
             <input
               type="text"
@@ -176,6 +178,8 @@ const EventOnboardingForm = () => {
               onChange={(e) => setPrice(e.target.value)}
               placeholder=" "
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+              pattern="^[0-9]+$"
+              title="Please enter a valid price (numbers only)"
             />
           </div>
           <div>
@@ -187,8 +191,9 @@ const EventOnboardingForm = () => {
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
-          <span className="py-2 text-red-600">{messageDate}</span>
-
+          <div className="md:col-span-2">
+            <span className="block py-2 text-red-600">{messageDate}</span>
+          </div>
           <div>
             <label className="block text-sm font-medium mb-2">
               Event Last Date for Registrations
@@ -200,11 +205,13 @@ const EventOnboardingForm = () => {
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
-          <span className="py-2 text-red-600">{messageLastDate}</span>
+          <div className="md:col-span-2">
+            <span className="block py-2 text-red-600">{messageLastDate}</span>
+          </div>
           <div>
             <label className="block text-sm font-medium mb-2">
-              Email(
-              <span className=" font-light">for furthur communications</span>)
+              Email (
+              <span className="font-light">for further communications</span>)
             </label>
             <input
               type="email"
@@ -217,113 +224,77 @@ const EventOnboardingForm = () => {
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">
-              Phone Number (
-              <span className="font-light">
-                to display on the registration page
-              </span>
-              )
+              Contact Number (
+              <span className="font-light">for further communications</span>)
             </label>
             <input
               type="tel"
-              id="eventNumber"
+              id="eventPhone"
               value={eventManagerPhone}
               onChange={(e) => setEventManagerPhone(e.target.value)}
-              pattern="[0-9]{10}"
-              title="Please enter a valid 10-digit phone number."
               required
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+              pattern="[0-9]{10}"
+              title="Please enter a valid 10-digit phone number"
             />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">
-              UPI Id (
-              <span className="font-light">
-                To receive the payments for the event
-              </span>
+              UPI ID (<span className="font-light">for receiving payments</span>
               )
             </label>
             <input
               type="text"
-              id="eventUPI"
+              id="eventManagerUPI"
               value={eventManagerUPI}
               onChange={(e) => setEventManagerUPI(e.target.value)}
-              placeholder="Leave empty if not using UPI for payments"
-              pattern="^([a-zA-Z0-9._]+)@([a-zA-Z]{2,64})$"
-              title="Please enter a valid UPI ID (e.g., username@bankname)"
               required
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
-
           <div>
             <label className="block text-sm font-medium mb-2">
-              Admin Pannel Password{" "}
+              Admin Password (
+              <span className="font-light">for managing event</span>)
             </label>
             <input
-              type="text"
-              id="eventPassword"
+              type="password"
+              id="eventAdminPassword"
               value={eventAdminPassword}
               onChange={(e) => setEventAdminPassword(e.target.value)}
               required
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
-
-          <div class=" border-indigo-500 border p-6 flex text-sm rounded-lg shadow-lg">
-            <ol class="list-decimal w-full space-y-3">
-              <li>
-                All Communication will be done through the email provided i.e.
-                {eventManagerMail}
-              </li>
-              <li>
-                The credinals will be sent to your email id for the admin pannel
-              </li>
-              <li>For Other payament options contact us</li>
-              <li>
-                The event will be live on the date you have selected and will be
-                open for registration till the last date
-              </li>
-            </ol>
-          </div>
-
-          {spinner ? (
-            <>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-center font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg flex items-center justify-center duration-150"
+          <button
+            type="submit"
+            className="md:col-span-2 w-full flex justify-center bg-indigo-500 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+          >
+            {spinner ? (
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  className="animate-spin h-5 w-5 text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8v8H4z"
-                  ></path>
-                </svg>
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-center text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg duration-150"
-              >
-                Create Event
-              </button>
-            </>
-          )}
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+            ) : (
+              "Submit"
+            )}
+          </button>
         </form>
       </div>
     </main>
