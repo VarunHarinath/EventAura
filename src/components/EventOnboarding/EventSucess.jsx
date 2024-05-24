@@ -7,6 +7,7 @@ import FormattedDate from "./utils/FormattedDate";
 const Sucess = () => {
   const [data, setdata] = useState(null);
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetctApi = async () => {
@@ -15,6 +16,7 @@ const Sucess = () => {
           `https://tesract-server.onrender.com/event/${id}`
         );
         console.log(response);
+        setLoading(false);
         setdata(response.data.data);
       } catch (error) {
         console.log(error);
@@ -22,12 +24,68 @@ const Sucess = () => {
     };
     fetctApi();
   }, []);
+  if (loading) {
+    return (
+      <>
+        <div className="mt-7">
+          <div role="status" className="animate-pulse">
+            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 max-w-[640px] mb-2.5 mx-auto"></div>
+            <div className="h-2.5 mx-auto bg-gray-300 rounded-full dark:bg-gray-700 max-w-[540px]"></div>
+            <div className="h-2.5 mx-auto bg-gray-300 rounded-full dark:bg-gray-700 max-w-[500px] mt-2"></div>
+            <div className="h-2.5 mx-auto bg-gray-300 rounded-full dark:bg-gray-700 max-w-[450px] mt-2"></div>
 
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div
+          role="status"
+          className="max-w md:m-10 m-5 p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700"
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+            </div>
+            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+            </div>
+            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+            </div>
+            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+            </div>
+            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+              <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+            </div>
+            <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+          </div>
+          <span className="sr-only">Loading...</span>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       {data ? (
         <>
-          <div className="mx-auto max-w-screen-xl h-screen">
+          <div className="mx-auto max-w-screen-xl">
             <header>
               <div className=" px-4 mt-10 py-8 sm:px-6 sm:py-12 lg:px-8 ">
                 <div className="sm:flex sm:items-center  sm:justify-between">
@@ -44,7 +102,7 @@ const Sucess = () => {
 
                   <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
                     <button
-                      className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring hover:text-gray-900"
                       type="button"
                     >
                       <span className="text-sm font-medium"> View Page </span>
@@ -66,7 +124,7 @@ const Sucess = () => {
                     </button>
 
                     <button
-                      className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring hover:text-gray-900"
                       type="button"
                     >
                       <span className="text-sm font-medium">
@@ -93,7 +151,7 @@ const Sucess = () => {
                 </div>
               </div>
             </header>
-            <div className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm dark:border-gray-700 mx-7 sm:mx-20">
+            <div className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm dark:border-gray-700 mx-7 sm:mx-20 min-h-screen ">
               <dl className="-my-3 divide-y divide-gray-100 text-sm dark:divide-gray-700 ">
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                   <dt className="font-medium  dark:text-white"> Name</dt>
@@ -104,7 +162,7 @@ const Sucess = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                   <dt className="font-medium  dark:text-white">Description</dt>
-                  <dd className=" sm:col-span-2 dark:text-gray-100">
+                  <dd className=" sm:col-span-2 dark:text-gray-100 line-clamp-3 ... text-base/relaxed">
                     {data?.eventDescription}
                   </dd>
                 </div>
