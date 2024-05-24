@@ -90,7 +90,7 @@ const Sucess = () => {
               <div className=" px-4 mt-10 py-8 sm:px-6 sm:py-12 lg:px-8 ">
                 <div className="sm:flex sm:items-center  sm:justify-between">
                   <div className="text-center sm:text-left">
-                    <h1 className="text-2xl font-bold text-gray-100 sm:text-3xl">
+                    <h1 className="text-2xl font-semibold text-gray-100 sm:text-3xl">
                       The {data?.eventName} event has been created successfully!
                       🎉
                     </h1>
@@ -105,7 +105,7 @@ const Sucess = () => {
                       className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring hover:text-gray-900"
                       type="button"
                     >
-                      <span className="text-sm font-medium"> View Page </span>
+                      <span className="text-sm font-semibold"> View Page </span>
 
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@ const Sucess = () => {
                       className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring hover:text-gray-900"
                       type="button"
                     >
-                      <span className="text-sm font-medium">
+                      <span className="text-sm font-semibold">
                         {" "}
                         View Admin Pannel{" "}
                       </span>
@@ -154,26 +154,28 @@ const Sucess = () => {
             <div className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm dark:border-gray-700 mx-7 sm:mx-20 min-h-screen ">
               <dl className="-my-3 divide-y divide-gray-100 text-sm dark:divide-gray-700 ">
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white"> Name</dt>
+                  <dt className=" font-semibold dark:text-white"> Name</dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     {" "}
                     {data?.eventName}{" "}
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white">Description</dt>
+                  <dt className="font-semibold  dark:text-white">
+                    Description
+                  </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100 line-clamp-3 ... text-base/relaxed">
                     {data?.eventDescription}
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white"> Venue</dt>
+                  <dt className="font-semibold  dark:text-white"> Venue</dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     {data?.eventVenue}
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white">
+                  <dt className="font-semibold  dark:text-white">
                     Venue (Google Maps Link)
                   </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
@@ -185,25 +187,25 @@ const Sucess = () => {
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white"> Hosted By</dt>
+                  <dt className="font-semibold  dark:text-white"> Hosted By</dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     {data?.eventHostedBy}
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white"> Speaker</dt>
+                  <dt className="font-semibold  dark:text-white"> Speaker</dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     {data?.eventSpeaker}
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white"> Hosted On</dt>
+                  <dt className="font-semibold  dark:text-white"> Hosted On</dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     <FormattedDate dateString={data?.eventDate} />
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white">
+                  <dt className="font-semibold  dark:text-white">
                     Last Date For registration
                   </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
@@ -211,13 +213,16 @@ const Sucess = () => {
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white"> Created On</dt>
+                  <dt className="font-semibold  dark:text-white">
+                    {" "}
+                    Created On
+                  </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     <FormattedDate dateString={data?.eventCreatedDate} />
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white">
+                  <dt className="font-semibold  dark:text-white">
                     Contact (Mail Id)
                   </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
@@ -225,7 +230,9 @@ const Sucess = () => {
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <dt className="font-medium  dark:text-white">Phone Number</dt>
+                  <dt className="font-semibold  dark:text-white">
+                    Phone Number
+                  </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
                     {data?.eventManagerPhone}
                   </dd>
