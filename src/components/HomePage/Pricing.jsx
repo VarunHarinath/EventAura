@@ -12,8 +12,8 @@ const Pricing = () => {
           </p>
           <div className="max-w-xl">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              efficitur consequat nunc.
+              Flexible plans tailored to your needs, ensuring you only pay for
+              what you use.
             </p>
           </div>
         </div>
@@ -21,7 +21,7 @@ const Pricing = () => {
           {pricingOptions.map((item, idx) => (
             <div
               key={idx}
-              className={`relative flex-1 flex items-stretch flex-col mt-6 border-2 border-indigo-600 sm:mt-0 sm:rounded-xl   sm:max-w-md`}
+              className={`relative flex-1 flex items-stretch flex-col mt-6 border-2 border-indigo-600 sm:mt-0 sm:rounded-xl   mx-4`}
             >
               <div className="p-4 py-8 space-y-4 border-b border-gray-700 md:p-8">
                 <span className="text-gray-100 font-medium">{item.title}</span>

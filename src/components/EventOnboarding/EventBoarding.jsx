@@ -19,6 +19,9 @@ const EventBoarding = () => {
       ) : (
         <>
           <div>
+            <h1 className="mx-16 mt-5 font-semibold text-indigo-600 text-xl">
+              **Accept the Terms of Services To Host you Event**
+            </h1>
             <EventEULA />
 
             <div className="px-20">

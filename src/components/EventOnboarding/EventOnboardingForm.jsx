@@ -83,12 +83,14 @@ const EventOnboardingForm = () => {
   };
 
   return (
-    <main className="w-auto h-auto flex flex-col items-center justify-center pt-5">
+    <main className="w-auto h-auto flex flex-col items-center justify-center pt-5 mx-5 md:m-0">
       <div className="max-w-2xl w-full text-white">
         <div className="text-center pb-8">
-          <h3 className="text-3xl font-bold sm:text-4xl">Sign Up</h3>
+          <h3 className="text-3xl font-bold sm:text-4xl">
+            Host Your Event Here !
+          </h3>
           <p className="mt-2 text-lg">
-            Join our community and unlock awesome features.
+            Make the event the marvelous one with us. Fill the form below to
           </p>
         </div>
         <form
