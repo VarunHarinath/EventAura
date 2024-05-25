@@ -8,6 +8,7 @@ import EventBoarding from "./components/EventOnboarding/EventBoarding";
 import Error from "./components/utils/Error";
 import EventSucess from "./components/EventOnboarding/EventSucess";
 import Events from "./components/ParticipantEvents/Events";
+import EventsDetail from "./components/ParticipantEvents/EventsDetail";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           />
           {/* Events Route */}
           <Route path="/events" element={<Events />} />
+          {/* Events Detail Route */}
+          <Route path="/event/:id" element={<EventsDetail />} />
 
           {/* error route */}
           <Route path="*" element={<Error />} />
