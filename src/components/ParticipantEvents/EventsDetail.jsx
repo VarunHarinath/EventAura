@@ -167,6 +167,11 @@ const EventsDetail = () => {
               </div>
             </dl>
           </div>
+          <div className="flex justify-center">
+            <button className="flex bg-indigo-600 px-5 py-3 text-center text-sm font-semibold text-gray-100 transition-transform transform hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:text-white rounded-3xl my-10 items-center justify-center">
+              Reserve your seat Now!!
+            </button>
+          </div>
         </>
       )}
     </>
