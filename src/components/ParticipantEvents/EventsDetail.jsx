@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CopyButton from "../EventOnboarding/utils/CopyButton";
 import FormattedDate from "../EventOnboarding/utils/FormattedDate";
 import axios from "axios";
+import cryptoRandom from "crypto-random-string";
 
 const EventsDetail = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const p = cryptoRandom({ length: 10, type: "alphanumeric" });
+  const secureId = cryptoRandom({ length: 10, type: "alphanumeric" });
+  const pId = cryptoRandom({ length: 10, type: "url-safe" });
+  const postSecureId = cryptoRandom({ length: 10, type: "numeric" });
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -168,9 +173,12 @@ const EventsDetail = () => {
             </dl>
           </div>
           <div className="flex justify-center">
-            <button className="flex bg-indigo-600 px-5 py-3 text-center text-sm font-semibold text-gray-100 transition-transform transform hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:text-white rounded-3xl my-10 items-center justify-center">
+            <Link
+              to={`/event/secure/v3/${p}/${secureId}/${pId}/${id}/${postSecureId}`}
+              className="flex bg-indigo-600 px-5 py-3 text-center text-sm font-semibold text-gray-100 transition-transform transform hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:text-white rounded-3xl my-10 items-center justify-center"
+            >
               Reserve your seat Now!!
-            </button>
+            </Link>
           </div>
         </>
       )}

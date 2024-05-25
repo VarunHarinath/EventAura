@@ -9,6 +9,7 @@ import Error from "./components/utils/Error";
 import EventSucess from "./components/EventOnboarding/EventSucess";
 import Events from "./components/ParticipantEvents/Events";
 import EventsDetail from "./components/ParticipantEvents/EventsDetail";
+import EventRegistration from "./components/ParticipantEvents/EventRegistration";
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
           <Route path="/events" element={<Events />} />
           {/* Events Detail Route */}
           <Route path="/event/:id" element={<EventsDetail />} />
+          {/* Paricipant Registration Route */}
+          <Route
+            path="/event/secure/v3/:p/:secureId/:id/:eventId/:postSecureId"
+            element={<EventRegistration />}
+          />
 
           {/* error route */}
           <Route path="*" element={<Error />} />
