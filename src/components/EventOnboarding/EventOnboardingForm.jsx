@@ -29,13 +29,18 @@ const EventOnboardingForm = () => {
   const [freeEventCheckbox, setFreeEventCheckbox] = useState(false);
 
   const handleEventLastDate = (date) => {
-    if (eventLastDate && date >= eventLastDate) {
-      setMessageLastDate("Please select a date before the event date");
+    const currentDate = Date.now();
+
+    if (date < currentDate) {
+      setMessageLastDate("Please select a date after the current date");
       setEventLastDate(null);
-      return;
+    } else if (eventDate && date > eventDate) {
+      setMessageLastDate("Please select a date before or on the event date");
+      setEventLastDate(null);
+    } else {
+      setEventLastDate(date);
+      setMessageLastDate("");
     }
-    setEventLastDate(date);
-    setMessageLastDate("");
   };
 
   const handleEventDate = (date) => {
@@ -231,7 +236,7 @@ const EventOnboardingForm = () => {
           <div>
             <label className="block text-sm font-medium mb-2">Price</label>
             <input
-              type="text"
+              type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               placeholder=""
@@ -244,10 +249,13 @@ const EventOnboardingForm = () => {
               <input
                 type="checkbox"
                 checked={freeEventCheckbox}
-                onChange={() => setFreeEventCheckbox(!freeEventCheckbox)}
+                onChange={() => {
+                  setFreeEventCheckbox(!freeEventCheckbox);
+                  setPrice(freeEventCheckbox ? "" : "0");
+                }}
                 className="form-checkbox h-5 w-5 text-indigo-600"
               />
-              <span className="ml-2 text-sm text-gray-100">Free Event</span>
+              <span className="ml-2 text-sm text-gray-200">Free Event</span>
             </label>
           </div>
 
@@ -271,7 +279,8 @@ const EventOnboardingForm = () => {
               selected={eventLastDate}
               onChange={handleEventLastDate}
               dateFormat="yyyy-MM-dd"
-              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1 disabled:cursor-not-allowed disabled:bg-gray-500"
+              disabled={eventDate === null}
             />
           </div>
           <div className="md:col-span-2">
