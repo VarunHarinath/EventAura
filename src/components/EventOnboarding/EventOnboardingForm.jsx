@@ -233,7 +233,7 @@ const EventOnboardingForm = () => {
               type="text"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              placeholder=" "
+              placeholder="Enter 0 for free events"
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
               pattern="^[0-9]+$"
               title="Please enter a valid price (numbers only)"
