@@ -26,6 +26,7 @@ const EventOnboardingForm = () => {
   const [messageLastDate, setMessageLastDate] = useState("");
   const [spinner, setSpinner] = useState(false);
   const [eventMailDescription, setEventMailDescription] = useState("");
+  const [freeEventCheckbox, setFreeEventCheckbox] = useState(false);
 
   const handleEventLastDate = (date) => {
     if (eventLastDate && date >= eventLastDate) {
@@ -233,12 +234,23 @@ const EventOnboardingForm = () => {
               type="text"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              placeholder="Enter 0 for free events"
-              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+              placeholder=""
+              className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1 disabled:cursor-not-allowed disabled:bg-gray-500"
               pattern="^[0-9]+$"
               title="Please enter a valid price (numbers only)"
+              disabled={freeEventCheckbox}
             />
+            <label className="inline-flex items-center mt-2">
+              <input
+                type="checkbox"
+                checked={freeEventCheckbox}
+                onChange={() => setFreeEventCheckbox(!freeEventCheckbox)}
+                className="form-checkbox h-5 w-5 text-indigo-600"
+              />
+              <span className="ml-2 text-sm text-gray-100">Free Event</span>
+            </label>
           </div>
+
           <div>
             <label className="block text-sm font-medium mb-2">Event Date</label>
             <DatePicker
