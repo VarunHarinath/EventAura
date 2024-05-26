@@ -13,6 +13,7 @@ const EventRegistration = () => {
   const [email, setEmail] = useState("");
   const [rollNumber, setRollNumber] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isAgreed, setIsAgreed] = useState(false);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -27,7 +28,14 @@ const EventRegistration = () => {
     };
     fetchApi();
   }, []);
-
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    if ((data && data.eventPrice) == "0") {
+      console.log("free tickect");
+      return;
+    }
+    console.log("paid ticket");
+  };
   const handleModalOpen = () => {
     setIsModalOpen(true);
   };
@@ -38,7 +46,7 @@ const EventRegistration = () => {
   return (
     <>
       <div className="w-full min-h-screen flex flex-col items-center justify-center px-2 py-16 sm:px-6 sm:py-24">
-        <div className="w-full max-w-md space-y-8 bg-gray-900 p-8 rounded-lg shadow-lg border border-gray-600">
+        <div className="w-full max-w-md space-y-8 bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-600">
           <div className="text-center">
             <h2 className="text-2xl font-semibold text-gray-200">
               Student Registration
@@ -47,7 +55,7 @@ const EventRegistration = () => {
               Complete the form to proceed with your payment.
             </p>
           </div>
-          <form className="mt-8 space-y-6">
+          <form className="mt-8 space-y-6" onSubmit={onSubmitHandler}>
             <div className="relative">
               <input
                 type="text"
@@ -161,6 +169,8 @@ const EventRegistration = () => {
                   <input
                     type="checkbox"
                     className="form-checkbox text-indigo-600 bg-gray-700 border-gray-600"
+                    checked={isAgreed}
+                    onChange={() => setIsAgreed(!isAgreed)}
                   />
                   <span className="ml-2 text-gray-200">
                     I accept the{" "}
@@ -174,12 +184,27 @@ const EventRegistration = () => {
                   </span>
                 </label>
               </div>
-              <button
-                type="submit"
-                className="w-full flex justify-center items-center px-4 py-3 text-white font-medium rounded-lg focus:outline-none duration-300 bg-indigo-600 hover:bg-indigo-500 focus:bg-indigo-700 active:bg-indigo-600"
-              >
-                Pay with PhonePay
-              </button>
+              {data?.eventPrice === "0" ? (
+                <>
+                  <button
+                    type="submit"
+                    className="w-full flex justify-center items-center px-4 py-3 text-white font-medium rounded-lg focus:outline-none duration-300 bg-indigo-600 hover:bg-indigo-500 focus:bg-indigo-700 active:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={!isAgreed}
+                  >
+                    Complete your registration
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="submit"
+                    className="w-full flex justify-center items-center px-4 py-3 text-white font-medium rounded-lg focus:outline-none duration-300 bg-indigo-600 hover:bg-indigo-500 focus:bg-indigo-700 active:bg-indigo-600"
+                    disabled={!isAgreed}
+                  >
+                    Pay with PhonePay
+                  </button>
+                </>
+              )}
             </div>
           </form>
         </div>
