@@ -79,7 +79,7 @@ const EventRegistration = () => {
             <div className="relative">
               <input
                 type="email"
-                placeholder="Email (College Email ID)"
+                placeholder="Email "
                 className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
