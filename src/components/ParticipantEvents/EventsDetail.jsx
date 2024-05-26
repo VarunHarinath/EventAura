@@ -21,6 +21,8 @@ const EventsDetail = () => {
           `https://tesract-server.onrender.com/event/${id}`
         );
         setData(response.data.data);
+        console.log(response.data.data);
+
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -173,12 +175,22 @@ const EventsDetail = () => {
             </dl>
           </div>
           <div className="flex justify-center">
-            <Link
-              to={`/event/secure/v3/${p}/${secureId}/${pId}/${id}/${postSecureId}`}
-              className="flex bg-indigo-600 px-5 py-3 text-center text-sm font-semibold text-gray-100 transition-transform transform hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:text-white rounded-3xl my-10 items-center justify-center"
-            >
-              Reserve your seat Now!!
-            </Link>
+            {data.eventStaus === true ? (
+              <>
+                <Link
+                  to={`/event/secure/v3/${p}/${secureId}/${pId}/${id}/${postSecureId}`}
+                  className="flex bg-indigo-600 px-5 py-3 text-center text-sm font-semibold text-gray-100 transition-transform transform hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:text-white rounded-3xl my-10 items-center justify-center"
+                >
+                  Reserve your seat Now!!
+                </Link>
+              </>
+            ) : (
+              <>
+                <span className="flex bg-indigo-600 px-5 py-3 text-center text-sm font-semibold text-gray-100 transition-transform transform hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:text-white rounded-3xl my-10 items-center justify-center opacity-50 cursor-not-allowed">
+                  Oops the registrations are closed 😔
+                </span>
+              </>
+            )}
           </div>
         </>
       )}
