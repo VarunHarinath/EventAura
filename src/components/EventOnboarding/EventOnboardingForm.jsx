@@ -3,6 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import bcrypt from "bcryptjs";
 import axios from "axios";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 
 const EventOnboardingForm = () => {
@@ -23,6 +25,7 @@ const EventOnboardingForm = () => {
   const [messageDate, setMessageDate] = useState("");
   const [messageLastDate, setMessageLastDate] = useState("");
   const [spinner, setSpinner] = useState(false);
+  const [eventMailDescription, setEventMailDescription] = useState("");
 
   const handleEventLastDate = (date) => {
     if (eventLastDate && date >= eventLastDate) {
@@ -64,7 +67,9 @@ const EventOnboardingForm = () => {
       eventHostedBy: eventHostedBy,
       eventSpeaker: eventSpeaker,
       eventPrice: price,
+      eventMailDescription: eventMailDescription,
     };
+    console.log(data);
     try {
       const response = await axios.post(
         "https://tesract-server.onrender.com/event",
@@ -118,6 +123,56 @@ const EventOnboardingForm = () => {
               onChange={(e) => setEventDescription(e.target.value)}
               required
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
+            />
+          </div>
+
+          <div className="md:col-span-2 text-gray-100">
+            <label className="block text-sm font-medium mb-2">
+              Event Mail Description
+            </label>
+            <p className="block text-sm font-medium mb-2">
+              (The same message will be sent to the registered users via email)
+            </p>
+            <ReactQuill
+              value={eventMailDescription}
+              onChange={(content, delta, source, editor) =>
+                setEventMailDescription(editor.getHTML())
+              }
+              modules={{
+                toolbar: [
+                  [{ header: "1" }, { header: "2" }, { font: [] }],
+                  [{ list: "ordered" }, { list: "bullet" }],
+                  ["bold", "italic", "underline", "strike"],
+                  [{ color: [] }, { background: [] }],
+                  [{ align: [] }],
+                  ["blockquote", "code-block"],
+                  [{ script: "sub" }, { script: "super" }],
+                  [{ indent: "-1" }, { indent: "+1" }],
+                  [{ direction: "rtl" }],
+                  ["clean"],
+                ],
+              }}
+              formats={[
+                "header",
+                "font",
+                "list",
+                "bullet",
+                "bold",
+                "italic",
+                "underline",
+                "strike",
+                "color",
+                "background",
+                "align",
+
+                "blockquote",
+                "code-block",
+                "script",
+                "indent",
+                "direction",
+                "clean",
+              ]}
+              className="w-full rounded-2xl  text-gray-100 focus:outline-none focus:ring-indigo-500 focus:ring-1"
             />
           </div>
           <div>
