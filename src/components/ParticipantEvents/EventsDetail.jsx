@@ -152,7 +152,7 @@ const EventsDetail = () => {
                   How much? 💸
                 </dt>
                 <dd className="text-gray-700 sm:col-span-2 dark:text-gray-200">
-                  ₹{data.eventPrice}
+                  {data.eventPrice == 0 ? "FREE" : <>₹{data.eventPrice}</>}
                 </dd>
               </div>
               <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">

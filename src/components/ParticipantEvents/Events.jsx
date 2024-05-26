@@ -97,7 +97,7 @@ const Events = () => {
                   <div className="sm:flex sm:items-end sm:justify-end mt-4">
                     <Link
                       to={`/event/${event._id}`}
-                      className="block bg-indigo-600  py-3 sm:px-5 sm:py-3 text-center text-xs font-bold uppercase text-gray-100 transition hover:bg-indigo-700 rounded-3xl opacity-90"
+                      className="block bg-indigo-600  py-3 sm:px-5 sm:py-3 text-center text-xs font-bold uppercase text-gray-100 transition hover:bg-indigo-700 rounded-3xl "
                     >
                       Book your event
                     </Link>
