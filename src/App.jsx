@@ -10,6 +10,7 @@ import EventSucess from "./components/EventOnboarding/EventSucess";
 import Events from "./components/ParticipantEvents/Events";
 import EventsDetail from "./components/ParticipantEvents/EventsDetail";
 import EventRegistration from "./components/ParticipantEvents/EventRegistration";
+import UserSucess from "./components/ParticipantEvents/UserSucess";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
             path="/event/secure/v3/:p/:secureId/:id/:eventId/:postSecureId"
             element={<EventRegistration />}
           />
+          {/* User Sucess Registration */}
+          <Route path="/event/:id/success" element={<UserSucess />} />
 
           {/* error route */}
           <Route path="*" element={<Error />} />

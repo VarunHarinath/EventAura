@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Modal from "./utils/Modal";
 import UserEULA from "../EULA/UserEULA ";
 import axios from "axios";
 
 const EventRegistration = () => {
+  const navigate = useNavigate();
   const { eventId } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setdata] = useState(null);
@@ -22,6 +23,7 @@ const EventRegistration = () => {
         const response = await axios.get(
           `https://tesract-server.onrender.com/event/${eventId}`
         );
+
         setdata(response.data.data);
         setLoading(false);
       } catch (error) {
@@ -32,8 +34,25 @@ const EventRegistration = () => {
   }, []);
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    const Userdata = {
+      name,
+      collegeName,
+      email,
+      rollNumber,
+      phoneNumber,
+    };
+
     if ((data && data.eventPrice) == "0") {
-      console.log("free tickect");
+      const response = await axios.post(
+        `https://tesract-server.onrender.com/registration/${eventId}`,
+        Userdata
+      );
+      console.log(response.data);
+      if (response && response.data.message === true) {
+        navigate(`/event/${response.data.id}/success`);
+      }
+      navigate(`/event/failure`);
+
       return;
     }
     console.log("paid ticket");
