@@ -11,6 +11,7 @@ import Events from "./components/ParticipantEvents/Events";
 import EventsDetail from "./components/ParticipantEvents/EventsDetail";
 import EventRegistration from "./components/ParticipantEvents/EventRegistration";
 import UserSucess from "./components/ParticipantEvents/UserSucess";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           />
           {/* User Sucess Registration */}
           <Route path="/event/:id/success" element={<UserSucess />} />
+          <Route path="/contact-us" element={<ContactUs />} />
 
           {/* error route */}
           <Route path="*" element={<Error />} />
