@@ -6,7 +6,7 @@ const ContactUs = () => {
       ContactUs
       <br />
       <ul className="text-indigo-600 font-bold">
-        <li>Varun Harinath Rudravally (CEO and founding memeber)</li>
+        <li>Rudravally Varun Harinath (CEO and founding memeber)</li>
         <li>varunharinath.rudravally@gmail.com</li>
         <li>9030684781</li>
       </ul>
