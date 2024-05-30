@@ -43,15 +43,20 @@ const EventRegistration = () => {
     };
 
     if ((data && data.eventPrice) == "0") {
-      const response = await axios.post(
-        `https://tesract-server.onrender.com/registration/${eventId}`,
-        Userdata
-      );
-      console.log(response.data);
-      if (response && response.data.message === true) {
-        navigate(`/event/${response.data.id}/success`);
+      try {
+        const response = await axios.post(
+          `https://tesract-server.onrender.com/registration/${eventId}`,
+          Userdata
+        );
+        console.log(response.data);
+        if (response && response.data.message === true) {
+          navigate(`/event/${response.data.id}/success`);
+          return;
+        }
+      } catch (error) {
+        console.log(error);
+        navigate(`/event/failure`);
       }
-      navigate(`/event/failure`);
 
       return;
     }

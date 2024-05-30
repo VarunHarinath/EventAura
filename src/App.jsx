@@ -32,6 +32,7 @@ function App() {
             path="/secure/v3/Event-On-Boarding/success/:id"
             element={<EventSucess />}
           />
+
           {/* Events Route */}
           <Route path="/events" element={<Events />} />
           {/* Events Detail Route */}

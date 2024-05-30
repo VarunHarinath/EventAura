@@ -168,9 +168,10 @@ const UserSucess = () => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                  <ul>
-                    <li>Check your mail for furthur intructions</li>
-                  </ul>
+                  <dt className="font-semibold  dark:text-white">QR Code</dt>
+                  <dd className=" sm:col-span-2 dark:text-gray-100 ">
+                    <img src={data.qrCode} alt="Participant Qr Code" />
+                  </dd>
                 </div>
               </dl>
             </div>

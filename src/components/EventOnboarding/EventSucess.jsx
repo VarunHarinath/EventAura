@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CopyButton from "./utils/CopyButton";
 import FormattedDate from "./utils/FormattedDate";
 
@@ -103,7 +103,8 @@ const Sucess = () => {
                   </div>
 
                   <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-                    <button
+                    <Link
+                      to={`/event/${id}`}
                       className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring hover:text-gray-900"
                       type="button"
                     >
@@ -123,9 +124,10 @@ const Sucess = () => {
                           d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                         />
                       </svg>
-                    </button>
+                    </Link>
 
-                    <button
+                    <Link
+                      to={`/secure/dashboard/${id}`}
                       className="inline-flex items-center justify-center gap-1.5 rounded-lg   px-5 py-3 text-gray-100 transition hover:bg-gray-50 hover: hover:border-gray-200 hover:border focus:outline-none focus:ring hover:text-gray-900"
                       type="button"
                     >
@@ -148,7 +150,7 @@ const Sucess = () => {
                           d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                         />
                       </svg>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
