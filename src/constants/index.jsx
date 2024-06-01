@@ -7,8 +7,8 @@ import { Lock } from "lucide-react";
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Events", href: "/events" },
   { label: "About Us", href: "/about-us" },
+  { label: "Events", href: "/events" },
   { label: "Contact Us", href: "/Contact-Us" },
 ];
 
@@ -16,7 +16,7 @@ export const workflow = [
   {
     title: "Visit the Event Registration Page",
     description:
-      "Navigate to the event registration page to begin the registration process.",
+      "Navigate to the HOST YOUR EVENT page to begin the registration process.",
   },
   {
     title: "Read Terms of Service and Data Privacy",
@@ -114,6 +114,56 @@ export const pricingOptions = [
       "Custom Payment Gateway Integration",
       "Enhanced Secure Tunnel",
     ],
+  },
+];
+
+export const team = [
+  {
+    avatar:
+      "https://media.licdn.com/dms/image/D5603AQH3m_VqfMjRXQ/profile-displayphoto-shrink_400_400/0/1690730441108?e=1722470400&v=beta&t=PS_ZyX-SSbmD0cs3XZuVX_o9t5tU8R-tbKbfEUCPaY0",
+    name: "Sindhu Ravuri",
+    title: "CEO , CFO & Chief Marketing Officer (CMO)",
+    linkedin: "https://www.linkedin.com/in/sindhu-ravuri/",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar:
+      "https://media.licdn.com/dms/image/D5603AQFVRgQq0ObZCg/profile-displayphoto-shrink_400_400/0/1697024171061?e=1722470400&v=beta&t=GEJ7TsLeoaI_Zhvmosv6nibvf-VOchVD27FL8kP2yQE",
+    name: "Varun Harinath",
+    title: "Co-founder & Lead Developer ",
+    linkedin: "https://www.linkedin.com/in/varun-harinath/",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar:
+      "https://media.licdn.com/dms/image/D5603AQESlx66wwEMJA/profile-displayphoto-shrink_400_400/0/1708603457057?e=1722470400&v=beta&t=Wy_dqLT0HHtW8gBnEFhf6PKSJzR7mK9oEEU8kveAQQU",
+    name: "Sarhtak Aitha",
+    title: "CTO & Technology Team Lead",
+    linkedin: "https://www.linkedin.com/in/sarthak-aitha-943534252/",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    name: "Selva Geeta Velan",
+    title: "Social Media Manager",
+    linkedin: "javascript:void(0)",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar:
+      "https://media.licdn.com/dms/image/D5603AQFmrsIDUYlGag/profile-displayphoto-shrink_400_400/0/1713345468327?e=1722470400&v=beta&t=nP-LUAkm-9R5emm6hw14Plnx36UP8kv6smpvrd4eU7E",
+    name: "Akshay Rachakonda",
+    title: "Frontend Developer",
+    linkedin: "https://www.linkedin.com/in/akshay-rachakonda-a92bb524a/",
+    twitter: "javascript:void(0)",
+  },
+  {
+    avatar:
+      "https://media.licdn.com/dms/image/D5603AQGZIrxbD16qwA/profile-displayphoto-shrink_400_400/0/1670678932973?e=1722470400&v=beta&t=j5IUMh9-DjDRBrLtl0OT6QQYL7PtYnmoa4yBVbRsZA0",
+    name: "Akshay Sakinam",
+    title: "Frontend Developer",
+    linkedin: "https://www.linkedin.com/in/akshay-sakinam-516502255/",
+    twitter: "javascript:void(0)",
   },
 ];
 
