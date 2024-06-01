@@ -10,7 +10,7 @@ const EventRegistration = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setdata] = useState(null);
   const [name, setName] = useState("");
-  const [collegeName, setCollegeName] = useState("");
+  const [college, setcollege] = useState("");
   const [email, setEmail] = useState("");
   const [rollNumber, setRollNumber] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -36,7 +36,7 @@ const EventRegistration = () => {
     e.preventDefault();
     const Userdata = {
       name,
-      collegeName,
+      college,
       email,
       rollNumber,
       phoneNumber,
@@ -156,8 +156,8 @@ const EventRegistration = () => {
                   type="text"
                   placeholder="College Name"
                   className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                  value={collegeName}
-                  onChange={(e) => setCollegeName(e.target.value)}
+                  value={college}
+                  onChange={(e) => setcollege(e.target.value)}
                   required
                 />
               </div>
