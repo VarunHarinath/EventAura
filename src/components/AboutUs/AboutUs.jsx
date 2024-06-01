@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { team } from "../../constants";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -19,12 +20,12 @@ const AboutUs = () => {
             management features.
           </p>
           <div className="flex justify-center">
-            <a
-              href="#features"
+            <Link
+              to={"/contact-us"}
               className="inline-block px-8 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg shadow-md transition duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-700 dark:hover:bg-indigo-800 dark:focus:ring-indigo-600"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>
