@@ -14,6 +14,7 @@ const UserSucess = () => {
         const response = await axios.get(
           `https://tesract-server.onrender.com/participant/${id}`
         );
+        console.log(response.data);
         setdata(response.data);
         setloading(false);
       } catch (error) {
@@ -157,7 +158,9 @@ const UserSucess = () => {
                     Transcation Id
                   </dt>
                   <dd className=" sm:col-span-2 dark:text-gray-100">
-                    {data.transactionId ? data.transactionId : "-NA- "}
+                    {data.paymentData.data.transactionId
+                      ? data.paymentData.data.transactionId
+                      : "-NA- "}
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
