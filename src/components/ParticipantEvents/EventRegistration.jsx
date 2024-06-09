@@ -60,7 +60,16 @@ const EventRegistration = () => {
 
       return;
     }
-    console.log("paid ticket");
+
+    try {
+      const response = await axios.post(
+        `https://tesract-server.onrender.com/api/phone-pay/registration/user/${eventId}`,
+        Userdata
+      );
+      window.open(response.data, "_self");
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleModalOpen = () => {
     setIsModalOpen(true);
