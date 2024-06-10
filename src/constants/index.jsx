@@ -129,7 +129,7 @@ export const team = [
   {
     avatar:
       "https://media.licdn.com/dms/image/D5603AQFVRgQq0ObZCg/profile-displayphoto-shrink_400_400/0/1697024171061?e=1722470400&v=beta&t=GEJ7TsLeoaI_Zhvmosv6nibvf-VOchVD27FL8kP2yQE",
-    name: "Varun Harinath",
+    name: "Rudravally Varun Harinath",
     title: "Co-founder & Lead Developer ",
     linkedin: "https://www.linkedin.com/in/varun-harinath/",
     twitter: "javascript:void(0)",
