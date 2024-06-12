@@ -27,7 +27,7 @@ const Pricing = () => {
                 <span className="text-gray-100 font-medium">{item.title}</span>
                 <div className="text-gray-50 text-3xl font-semibold">
                   {item.price}{" "}
-                  <span className="text-xl font-normal ">/tickect</span>
+                  <span className="text-xl font-normal ">/ticket</span>
                 </div>
               </div>
               <ul className="p-4 py-8 space-y-3 md:p-8">

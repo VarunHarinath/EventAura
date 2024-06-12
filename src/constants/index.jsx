@@ -82,7 +82,7 @@ export const features = [
 export const pricingOptions = [
   {
     title: "Free",
-    price: "₹0",
+    price: "0 INR",
     features: [
       "Designed for Free Events",
       "Unlimited Participants Onboarding",
@@ -93,7 +93,7 @@ export const pricingOptions = [
   },
   {
     title: "Paid",
-    price: "2% + ₹5",
+    price: "2% + 5 INR",
     features: [
       "Designed for Paid Events",
       "Unlimited Participants Onboarding",
@@ -101,6 +101,7 @@ export const pricingOptions = [
       "Dynamic QR Code Ticketing",
       "Secured Admin Panel",
       "Secure Tunnel",
+      "2% transaction fee (payment gateway fee)",
     ],
   },
   {
@@ -113,6 +114,7 @@ export const pricingOptions = [
       "Dynamic QR Code Ticketing",
       "Custom Payment Gateway Integration",
       "Enhanced Secure Tunnel",
+      "2% transaction fee (payment gateway fee)",
     ],
   },
 ];
