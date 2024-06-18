@@ -2,15 +2,13 @@ import React from "react";
 
 const UserEULA = () => {
   return (
-    <div className=" text-gray-100 p-4 md:p-8 lg:p-16 space-y-8">
-      <h1 className="text-2xl md:text-4xl font-bold text-gray-100">
+    <div className="text-gray-100 p-4 md:p-8 lg:p-16 space-y-8 font-bold">
+      <h1 className="text-2xl md:text-4xl font-bold">
         Terms of Service for Users
       </h1>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
-          Introduction
-        </h2>
+        <h2 className="text-xl md:text-2xl font-semibold">Introduction</h2>
         <p className="font-normal">
           Welcome to Tesract, the preferred event management platform for
           student-driven clubs. This document governs your access to and use of
@@ -19,7 +17,7 @@ const UserEULA = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Ticket Purchase and Payment
         </h2>
         <p className="font-normal">
@@ -30,19 +28,19 @@ const UserEULA = () => {
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Payment Processing:</strong>{" "}
-          Payments are processed securely by PhonePay. Tesract does not store or
+          Payments are processed securely by PhonePe. Tesract does not store or
           have access to your credit card information.
         </p>
         <p className="font-normal">
-          <strong className="text-indigo-500">Payment Failures:</strong> In case
-          of payment failure during transactions, Tesract is liable to refund
-          the amount. This applies only if tickets are purchased from the
-          official website.
+          <strong className="text-indigo-500">Payment Failures:</strong> Tesract
+          does not handle refunds for any transactions, including payment
+          failures. All refund requests must be handled directly by the event
+          manager.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Ticket Confirmation and Use
         </h2>
         <p className="font-normal">
@@ -59,31 +57,29 @@ const UserEULA = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
-          Refund Policy
-        </h2>
+        <h2 className="text-xl md:text-2xl font-semibold">Refund Policy</h2>
         <p className="font-normal">
           <strong className="text-indigo-500">Final Sales:</strong> All ticket
           sales are final. Refunds are issued only if the event is canceled and
           not rescheduled.
         </p>
         <p className="font-normal">
-          <strong className="text-indigo-500">Refund Handling:</strong> Any
-          matters related to refunds will be taken care of by the event
-          managers. Tesract shall not initiate refunds unless there is a failure
-          in the PhonePay payment system.
+          <strong className="text-indigo-500">Refund Handling:</strong>Tesract
+          does not handle refunds for any transactions, including payment
+          failures. All refund requests must be handled directly by the event
+          manager.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Privacy Policy for Users
         </h2>
         <p className="font-normal">
           <strong className="text-indigo-500">Data Collection:</strong> We
           collect necessary information during the ticket purchase process, such
           as your name, email address, and payment details via our payment
-          gateway partner, PhonePay.
+          gateway partner, PhonePe.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Data Use:</strong> We use your
@@ -94,7 +90,7 @@ const UserEULA = () => {
         <p className="font-normal">
           <strong className="text-indigo-500">Data Security:</strong> We
           implement strong security measures to protect your data. Your payment
-          information is processed and secured by PhonePay. Tesract does not
+          information is processed and secured by PhonePe. Tesract does not
           store any user financial data (i.e., payment details) for security
           reasons.
         </p>
@@ -107,7 +103,7 @@ const UserEULA = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Liability and Disclaimer
         </h2>
         <p className="font-normal">
@@ -119,8 +115,8 @@ const UserEULA = () => {
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Security of Transactions:</strong>{" "}
-          Every transaction is secured by PhonePay. Tesract ensures the
-          integrity and security of the payment process.
+          Every transaction is secured by PhonePe. Tesract ensures the integrity
+          and security of the payment process.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Limitations on Liability:</strong>{" "}
@@ -137,7 +133,7 @@ const UserEULA = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Code of Conduct for Participants
         </h2>
         <p className="font-normal">
@@ -159,9 +155,7 @@ const UserEULA = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
-          Changes to Terms
-        </h2>
+        <h2 className="text-xl md:text-2xl font-semibold">Changes to Terms</h2>
         <p className="font-normal">
           Tesract reserves the right to modify these terms at any time. Any
           changes will be communicated to users via email or through our
@@ -171,15 +165,45 @@ const UserEULA = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-100">
-          Governing Law
-        </h2>
+        <h2 className="text-xl md:text-2xl font-semibold">Governing Law</h2>
         <p className="font-normal">
           These terms shall be governed by and construed in accordance with the
           laws of the jurisdiction in which Tesract operates. Any disputes
           arising out of or related to these terms shall be resolved in the
           courts of that jurisdiction.
         </p>
+
+        <div className="text-gray-100 p-4 md:p-8 lg:p-16 space-y-8 font-bold">
+          <h2 className="text-xl md:text-2xl font-semibold">Refund Policy</h2>
+
+          <section className="space-y-4">
+            <p className="font-normal">
+              <strong className="text-indigo-500">Refund Handling:</strong>{" "}
+              Tesract does not handle or initiate any refunds for ticket
+              purchases made through the platform. All sales are final, and
+              refunds or cancellations are not permitted under any
+              circumstances, including event cancellation by the organizer.
+            </p>
+            <p className="font-normal">
+              <strong className="text-indigo-500">
+                Non-Refundable Tickets:
+              </strong>{" "}
+              All tickets purchased through Tesract are non-refundable and
+              non-cancellable. Users acknowledge and agree that once a ticket
+              purchase is made, it cannot be refunded or canceled.
+            </p>
+            <p className="font-normal">
+              <strong className="text-indigo-500">
+                Damaged or Defective Tickets:
+              </strong>{" "}
+              In the rare event that a ticket is received in a damaged or
+              defective condition, please report the issue to our customer
+              service team immediately upon receipt. We will investigate the
+              matter and take appropriate action, which may include issuing a
+              replacement ticket if feasible.
+            </p>
+          </section>
+        </div>
       </section>
     </div>
   );
