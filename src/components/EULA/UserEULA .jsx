@@ -64,10 +64,9 @@ const UserEULA = () => {
           not rescheduled.
         </p>
         <p className="font-normal">
-          <strong className="text-indigo-500">Refund Handling:</strong>Tesract
-          does not handle refunds for any transactions, including payment
-          failures. All refund requests must be handled directly by the event
-          manager.
+          <strong className="text-indigo-500">Refund Handling:</strong>All
+          ticket sales are final, and we do not initiate any refunds, even if
+          the event is canceled.
         </p>
       </section>
 
