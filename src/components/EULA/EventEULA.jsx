@@ -111,7 +111,7 @@ const EventEULA = () => {
         </p>
         <ul className="list-disc list-inside ml-4 space-y-2">
           <li className=" font-normal">Payment Gateway Fee: 2%</li>
-          <li className=" font-normal">Platform Fee: ₹5 per transaction</li>
+          <li className=" font-normal">Platform Fee: 5 INR per transaction</li>
         </ul>
         <p className=" font-normal">
           No GST is applied to the payment gateway or platform fee. Enterprise
