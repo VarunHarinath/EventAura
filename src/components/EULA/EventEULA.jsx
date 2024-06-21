@@ -10,7 +10,7 @@ const EventEULA = () => {
       <section className="space-y-4">
         <h2 className="text-xl md:text-2xl font-semibold">Introduction</h2>
         <p className="font-normal">
-          Welcome to Tesract, a service by Veda Solutions, for managing your
+          Welcome to EventAura, a service by Veda Solutions, for managing your
           events. This document outlines the terms that apply to event managers
           using our platform.
         </p>
@@ -20,12 +20,12 @@ const EventEULA = () => {
         <h2 className="text-xl md:text-2xl font-semibold">Event Management</h2>
         <p className="font-normal">
           <strong className="text-indigo-500">Listing Events:</strong> You can
-          list your events on Tesract, providing all necessary details for
+          list your events on EventAura, providing all necessary details for
           ticket sales and event management.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Financial Transactions:</strong>{" "}
-          All financial transactions are processed through PhonePe. Tesract
+          All financial transactions are processed through PhonePe. EventAura
           deducts a platform fee and payment gateway fee from each transaction.
           The money collected from ticket sales will be settled to your account
           by PhonePe, typically within 3 to 5 business days (T+3 to T+5 days).
@@ -89,9 +89,9 @@ const EventEULA = () => {
           </li>
         </ul>
         <p className="font-normal">
-          <strong className="text-indigo-500">Refunds:</strong> Tesract does not
-          handle refunds for any transactions, including payment failures. All
-          refund requests must be handled directly by the event manager.
+          <strong className="text-indigo-500">Refunds:</strong> EventAura does
+          not handle refunds for any transactions, including payment failures.
+          All refund requests must be handled directly by the event manager.
         </p>
       </section>
 
@@ -141,13 +141,13 @@ const EventEULA = () => {
         <h2 className="text-xl md:text-2xl font-semibold">Legal Matters</h2>
         <p className="font-normal">
           <strong className="text-indigo-500">Indemnity:</strong> You agree to
-          indemnify and hold Tesract and Veda Solutions harmless from any
+          indemnify and hold EventAura and Veda Solutions harmless from any
           claims, damages, or losses arising out of your use of the platform,
           including but not limited to legal fees.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Limitation of Liability:</strong>{" "}
-          Tesract and Veda Solutions are not liable for any financial losses
+          EventAura and Veda Solutions are not liable for any financial losses
           incurred by you. Our responsibility is limited to the fees collected
           for platform and payment gateway services.
         </p>
@@ -171,21 +171,21 @@ const EventEULA = () => {
           <section className="space-y-4">
             <p className="font-normal">
               <strong className="text-indigo-500">Cancellation Fee:</strong>{" "}
-              Tesract does not charge any cancellation fees to event managers in
-              case of event cancellation.
+              EventAura does not charge any cancellation fees to event managers
+              in case of event cancellation.
             </p>
             <p className="font-normal">
               <strong className="text-indigo-500">Non-Refundable Fees:</strong>{" "}
-              Event managers acknowledge that fees paid to Tesract for ticketing
-              services are non-refundable, even in the event of event
-              cancellation. Once fees are paid to Tesract, they will not be
+              Event managers acknowledge that fees paid to EventAura for
+              ticketing services are non-refundable, even in the event of event
+              cancellation. Once fees are paid to EventAura, they will not be
               refunded under any circumstances.
             </p>
             <p className="font-normal">
               <strong className="text-indigo-500">Event Cancellation:</strong>{" "}
               In the event that an event needs to be canceled, event managers
               are not subject to any penalties or cancellation fees from
-              Tesract. However, any fees paid for Tesract's services remain
+              EventAura. However, any fees paid for EventAura's services remain
               non-refundable.
             </p>
           </section>

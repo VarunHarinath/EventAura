@@ -23,7 +23,7 @@ const Navbar = () => {
               to="/"
               className="text-xl tracking-tight ml-2 text-white font-semibold"
             >
-              Tesract
+              EventAura
             </RouterLink>
           </div>
 

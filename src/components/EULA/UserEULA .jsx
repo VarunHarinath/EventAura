@@ -10,9 +10,9 @@ const UserEULA = () => {
       <section className="space-y-4">
         <h2 className="text-xl md:text-2xl font-semibold">Introduction</h2>
         <p className="font-normal">
-          Welcome to Tesract, the preferred event management platform for
+          Welcome to EventAura, the preferred event management platform for
           student-driven clubs. This document governs your access to and use of
-          Tesract for purchasing tickets and attending events.
+          EventAura for purchasing tickets and attending events.
         </p>
       </section>
 
@@ -22,20 +22,20 @@ const UserEULA = () => {
         </h2>
         <p className="font-normal">
           <strong className="text-indigo-500">Secure Purchase:</strong> Tickets
-          can be purchased through Tesract using our secure payment gateway. By
-          purchasing a ticket, you agree to the terms set forth by the event
-          organizer and Tesract.
+          can be purchased through EventAura using our secure payment gateway.
+          By purchasing a ticket, you agree to the terms set forth by the event
+          organizer and EventAura.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Payment Processing:</strong>{" "}
-          Payments are processed securely by PhonePe. Tesract does not store or
-          have access to your credit card information.
+          Payments are processed securely by PhonePe. EventAura does not store
+          or have access to your credit card information.
         </p>
         <p className="font-normal">
-          <strong className="text-indigo-500">Payment Failures:</strong> Tesract
-          does not handle refunds for any transactions, including payment
-          failures. All refund requests must be handled directly by the event
-          manager.
+          <strong className="text-indigo-500">Payment Failures:</strong>{" "}
+          EventAura does not handle refunds for any transactions, including
+          payment failures. All refund requests must be handled directly by the
+          event manager.
         </p>
       </section>
 
@@ -89,7 +89,7 @@ const UserEULA = () => {
         <p className="font-normal">
           <strong className="text-indigo-500">Data Security:</strong> We
           implement strong security measures to protect your data. Your payment
-          information is processed and secured by PhonePe. Tesract does not
+          information is processed and secured by PhonePe. EventAura does not
           store any user financial data (i.e., payment details) for security
           reasons.
         </p>
@@ -110,22 +110,23 @@ const UserEULA = () => {
             Event Manager Responsibility:
           </strong>{" "}
           Event managers can access your data for event-related purposes.
-          Tesract is not involved in any misuse of your data by event managers.
+          EventAura is not involved in any misuse of your data by event
+          managers.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Security of Transactions:</strong>{" "}
-          Every transaction is secured by PhonePe. Tesract ensures the integrity
-          and security of the payment process.
+          Every transaction is secured by PhonePe. EventAura ensures the
+          integrity and security of the payment process.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Limitations on Liability:</strong>{" "}
-          Tesract is not responsible for any issues arising from event entry,
+          EventAura is not responsible for any issues arising from event entry,
           event cancellation, or misuse of data by event managers beyond our
           control.
         </p>
         <p className="font-normal">
           <strong className="text-indigo-500">Indemnity:</strong> Users agree to
-          indemnify and hold Tesract harmless from any claims, damages, or
+          indemnify and hold EventAura harmless from any claims, damages, or
           expenses arising from the use of the platform, including the actions
           of event managers.
         </p>
@@ -156,7 +157,7 @@ const UserEULA = () => {
       <section className="space-y-4">
         <h2 className="text-xl md:text-2xl font-semibold">Changes to Terms</h2>
         <p className="font-normal">
-          Tesract reserves the right to modify these terms at any time. Any
+          EventAura reserves the right to modify these terms at any time. Any
           changes will be communicated to users via email or through our
           platform. Continued use of the platform after such changes constitutes
           acceptance of the new terms.
@@ -167,7 +168,7 @@ const UserEULA = () => {
         <h2 className="text-xl md:text-2xl font-semibold">Governing Law</h2>
         <p className="font-normal">
           These terms shall be governed by and construed in accordance with the
-          laws of the jurisdiction in which Tesract operates. Any disputes
+          laws of the jurisdiction in which EventAura operates. Any disputes
           arising out of or related to these terms shall be resolved in the
           courts of that jurisdiction.
         </p>
@@ -178,7 +179,7 @@ const UserEULA = () => {
           <section className="space-y-4">
             <p className="font-normal">
               <strong className="text-indigo-500">Refund Handling:</strong>{" "}
-              Tesract does not handle or initiate any refunds for ticket
+              EventAura does not handle or initiate any refunds for ticket
               purchases made through the platform. All sales are final, and
               refunds or cancellations are not permitted under any
               circumstances, including event cancellation by the organizer.
@@ -187,7 +188,7 @@ const UserEULA = () => {
               <strong className="text-indigo-500">
                 Non-Refundable Tickets:
               </strong>{" "}
-              All tickets purchased through Tesract are non-refundable and
+              All tickets purchased through EventAura are non-refundable and
               non-cancellable. Users acknowledge and agree that once a ticket
               purchase is made, it cannot be refunded or canceled.
             </p>

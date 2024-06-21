@@ -8,13 +8,13 @@ const AboutUs = () => {
       <section className=" relative overflow-hidden">
         <div className="py-12 px-4 mx-auto max-w-screen-xl text-center lg:py-20 z-10 relative">
           <h1 className="mb-6 text-4xl font-bold tracking-tight leading-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-indigo-600">
-            Elevate Your Events with Tesseract
+            Elevate Your Events with EventAura
           </h1>
           <p className="mb-10 text-lg font-medium text-gray-400 lg:text-xl sm:px-8 lg:px-32 dark:text-gray-400">
-            Elevate your event experience with Tesseract, the all-in-one
+            Elevate your event experience with EventAura, the all-in-one
             platform that combines event management tools with seamless
             financial services. Whether you're organizing paid conferences,
-            workshops, or free gatherings, Tesseract simplifies the process.
+            workshops, or free gatherings, EventAura simplifies the process.
             Empower your student-driven communities and college clubs with
             effortless registration, secure payments, and comprehensive event
             management features.

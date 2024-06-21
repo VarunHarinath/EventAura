@@ -14,7 +14,7 @@ const Footer = () => {
             <img src={Logo} className="w-36 h-auto" />
           </div>
           <p className="leading-relaxed  text-base font-light">
-            Tesseract empowers student-driven communities and college clubs in
+            EventAura empowers student-driven communities and college clubs in
             tech, AI, ML, and development. Our platform offers seamless payment
             gateways and efficient event management, ensuring smooth
             transactions and organized events for participants and event
@@ -30,8 +30,7 @@ const Footer = () => {
         </ul>
         <div className="mt-8 items-center justify-between sm:flex">
           <div className="mt-4 sm:mt-0 font-semibold">
-            &copy; 2024 Tesseract, registered under Veda Solutions. All rights
-            reserved.
+            &copy; 2024 EventAura
           </div>
           <div className="mt-6 sm:mt-0">
             <ul className="flex items-center space-x-4">

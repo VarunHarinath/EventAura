@@ -1,8 +1,8 @@
-# Tesseract Event Management System
+# EventAura Event Management System
 
 ## Overview
 
-The Tesseract Event Management System is a comprehensive platform designed to facilitate the organization and management of events, ranging from small gatherings to large-scale conferences. It offers a range of features to streamline event planning, attendee registration, ticketing, and analytics, catering to the needs of both event organizers and participants.
+The EventAura Event Management System is a comprehensive platform designed to facilitate the organization and management of events, ranging from small gatherings to large-scale conferences. It offers a range of features to streamline event planning, attendee registration, ticketing, and analytics, catering to the needs of both event organizers and participants.
 
 ## Key Features
 
