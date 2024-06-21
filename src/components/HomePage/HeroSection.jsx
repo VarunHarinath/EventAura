@@ -23,16 +23,10 @@ const HeroSection = () => {
             <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
               <Link
                 to="/secure/v3/Event-On-Boadring"
-                className="px-7 py-3 w-full bg-white text-gray-800 text-center rounded-md shadow-md block sm:w-auto hover:bg-gray-100"
+                className="px-7 py-3 w-full bg-indigo-600 text-gray-100 text-center rounded-md shadow-md block sm:w-auto hover:bg-indigo-700"
               >
                 Get Started
               </Link>
-              <a
-                href="#try-it-out"
-                className="px-7 py-3 w-full bg-gray-700 text-gray-200 text-center rounded-md block sm:w-auto hover:bg-gray-600"
-              >
-                Try It Out
-              </a>
             </div>
           </div>
           <div className="flex-1 text-center mt-7 lg:mt-0 lg:ml-3">
