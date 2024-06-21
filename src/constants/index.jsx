@@ -178,11 +178,11 @@ export const resourcesLinks = [
 ];
 
 export const footerNavs = [
-  { href: "#", text: "About Us" },
-  { href: "#", text: "Events" },
-  { href: "#", text: "Event Onboarding" },
+  { href: "/about-us", text: "About Us" },
+  { href: "/events", text: "Events" },
+  { href: "/secure/v3/Event-On-Boadring", text: "Event Onboarding" },
   { href: "/company-eula", text: "Terms and conditions" },
-  { href: "#", text: "Contact Us" },
+  { href: "/Contact-Us", text: "Contact Us" },
 ];
 
 export const communityLinks = [
