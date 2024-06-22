@@ -145,7 +145,7 @@ const EventRegistration = () => {
           <div className="w-full lg:w-1/2 p-4">
             <div className="text-center lg:text-left">
               <h2 className="text-2xl font-semibold text-gray-200">
-                Student Registration
+                Delegate Registration
               </h2>
               <p className="mt-1 text-sm text-gray-400">
                 Complete the form to proceed with your payment.
@@ -169,7 +169,6 @@ const EventRegistration = () => {
                   className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
                   value={college}
                   onChange={(e) => setcollege(e.target.value)}
-                  required
                 />
               </div>
               <div className="relative">
@@ -189,7 +188,6 @@ const EventRegistration = () => {
                   className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-700 text-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
                   value={rollNumber}
                   onChange={(e) => setRollNumber(e.target.value)}
-                  required
                 />
               </div>
               <div className="relative">
